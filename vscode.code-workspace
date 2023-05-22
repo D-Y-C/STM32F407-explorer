@@ -1,0 +1,111 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/HAL_Drivers",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/HAL_Drivers"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/HAL_Drivers/CMSIS/Include",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/HAL_Drivers/CMSIS/Include"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/HAL_Drivers/config",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/HAL_Drivers/config"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Include",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Include"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Inc",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Inc"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src",
+            "name": "rtthread/../../Stdlib/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/dfs/dfs_v1/filesystems/devfs",
+            "name": "rtthread/../../Stdlib/rt-thread/components/dfs/dfs_v1/filesystems/devfs"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/dfs/dfs_v1/include",
+            "name": "rtthread/../../Stdlib/rt-thread/components/dfs/dfs_v1/include"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/dfs/dfs_v1/src",
+            "name": "rtthread/../../Stdlib/rt-thread/components/dfs/dfs_v1/src"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/drivers/include",
+            "name": "rtthread/../../Stdlib/rt-thread/components/drivers/include"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/drivers/ipc",
+            "name": "rtthread/../../Stdlib/rt-thread/components/drivers/ipc"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/drivers/misc",
+            "name": "rtthread/../../Stdlib/rt-thread/components/drivers/misc"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/drivers/serial",
+            "name": "rtthread/../../Stdlib/rt-thread/components/drivers/serial"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/finsh",
+            "name": "rtthread/../../Stdlib/rt-thread/components/finsh"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/libc/compilers/common",
+            "name": "rtthread/../../Stdlib/rt-thread/components/libc/compilers/common"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/libc/compilers/common/include",
+            "name": "rtthread/../../Stdlib/rt-thread/components/libc/compilers/common/include"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/libc/compilers/newlib",
+            "name": "rtthread/../../Stdlib/rt-thread/components/libc/compilers/newlib"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/libc/posix/io/poll",
+            "name": "rtthread/../../Stdlib/rt-thread/components/libc/posix/io/poll"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/libc/posix/io/stdio",
+            "name": "rtthread/../../Stdlib/rt-thread/components/libc/posix/io/stdio"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/components/libc/posix/ipc",
+            "name": "rtthread/../../Stdlib/rt-thread/components/libc/posix/ipc"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/include",
+            "name": "rtthread/../../Stdlib/rt-thread/include"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/libcpu/arm/common",
+            "name": "rtthread/../../Stdlib/rt-thread/libcpu/arm/common"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/libcpu/arm/cortex-m4",
+            "name": "rtthread/../../Stdlib/rt-thread/libcpu/arm/cortex-m4"
+        },
+        {
+            "path": "../../Stdlib/rt-thread/src",
+            "name": "rtthread/../../Stdlib/rt-thread/src"
+        }
+    ]
+}

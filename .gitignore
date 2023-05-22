@@ -1,0 +1,13 @@
+# build dirctory
+build/*
+
+# tmp file
+*.elf
+*.map
+*.bin
+*.old
+
+# packages
+packages/at_device-latest/*
+packages/kawaii-mqtt-v1.1.0/*
+

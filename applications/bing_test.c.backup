@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <rtthread.h>
+#include <rtdevice.h>
+#include <sal_socket.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdev.h>
+#include <stdlib.h>
+#include <netdev_ipaddr.h>
+
+#define SERVER_HOST "192.168.3.20"
+#define SERVER_PORT 8080
+
+static int bing_test(int argc, char **argv)
+{
+    struct sockaddr_in client_addr;
+    struct sockaddr_in server_addr;
+    struct netdev *netdev = RT_NULL;
+    int sockfd = -1;
+    int AF = -1;
+    uint8_t send_buf[]= "This is a TCP Client test...\n";
+    uint8_t read_buf[10];
+    if (argc != 2)
+    {
+        rt_kprintf("bind_test [netdev_name]  --bind network interface device by name.\n");
+        return -RT_ERROR;
+    }
+    if(rt_strcmp(argv[1], "esp0") == 0)
+    {
+        AF = AF_AT;
+    }else if(rt_strcmp(argv[1], "e0") == 0){
+        AF = AF_INET;
+    }else{
+        return -RT_ERROR;
+    }
+    /* 通过名称获取 netdev 网卡对象 */
+    netdev = netdev_get_by_name(argv[1]);
+    if (netdev == RT_NULL)
+    {
+        rt_kprintf("get network interface device(%s) failed.\n", argv[1]);
+        return -RT_ERROR;
+    }
+    /* 设置默认网卡对象 */
+    netdev_set_default(netdev);
+    if ((sockfd = socket(AF, SOCK_STREAM, 0)) < 0)
+    {
+        rt_kprintf("Socket create failed.\n");
+        return -RT_ERROR;
+    }
+
+    /* 初始化需要绑定的客户端地址 */
+    client_addr.sin_family = AF;
+    client_addr.sin_port = htons(8080);
+    /* 获取网卡对象中 IP 地址信息 */
+    client_addr.sin_addr.s_addr = netdev->ip_addr.addr;
+    rt_memset(&(client_addr.sin_zero), 0, sizeof(client_addr.sin_zero));
+
+    if (bind(sockfd, (struct sockaddr *)&client_addr, sizeof(struct sockaddr)) < 0)
+    {
+        rt_kprintf("socket bind failed.\n");
+        closesocket(sockfd);
+        return -RT_ERROR;
+    }
+    rt_kprintf("socket bind network interface device(%s) success!\n", netdev->name);
+
+    /* 初始化预连接的服务端地址 */
+    server_addr.sin_family = AF;
+    server_addr.sin_port = htons(SERVER_PORT);
+    server_addr.sin_addr.s_addr = inet_addr(SERVER_HOST);
+    rt_memset(&(server_addr.sin_zero), 0, sizeof(server_addr.sin_zero));
+
+    /* 连接到服务端 */
+    if (connect(sockfd, (struct sockaddr *)&server_addr, sizeof(struct sockaddr)) < 0)
+    {
+        rt_kprintf("socket connect failed!\n");
+        closesocket(sockfd);
+        return -RT_ERROR;
+    }
+    else
+    {
+        rt_kprintf("socket connect success!\n");
+    }
+    send(sockfd,send_buf,sizeof(send_buf),0);
+    rt_kprintf("%s\n",read_buf);
+    /* 关闭连接 */
+    closesocket(sockfd);
+    return RT_EOK;
+}
+MSH_CMD_EXPORT(bing_test, bind network interface device test);
